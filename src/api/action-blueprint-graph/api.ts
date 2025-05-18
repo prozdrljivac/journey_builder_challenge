@@ -1,6 +1,10 @@
 import { apiV1Client } from '../api'
 import type { ActionBlueprintGraphDTO } from './dto'
 
+type ActionBlueprintGraphApiType = {
+  getById: (id: string) => Promise<ActionBlueprintGraphDTO>
+}
+
 const TENANT_ID = 123
 
 async function getActionBlueprintGraph(id: string) {
@@ -11,6 +15,6 @@ async function getActionBlueprintGraph(id: string) {
   return data
 }
 
-export const ActionBlueprintGraphApi = {
+export const ActionBlueprintGraphApi: ActionBlueprintGraphApiType = {
   getById: getActionBlueprintGraph,
 }
