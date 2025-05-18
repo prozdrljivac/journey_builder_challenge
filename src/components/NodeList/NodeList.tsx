@@ -8,6 +8,10 @@ type Node = {
   name: string
 }
 
+type NodeListProps = {
+  onItemClick: (id: string) => void
+}
+
 function actionBlueprintGraphToNode(
   actionBlueprintGraph: ActionBlueprintGraph,
 ): Node[] {
@@ -17,9 +21,13 @@ function actionBlueprintGraphToNode(
   return mappedData
 }
 
-export function NodeList() {
+export function NodeList(props: NodeListProps) {
   const actionBlueprintGraph = useActionBlueprintGraphContext()
   const nodes = actionBlueprintGraphToNode(actionBlueprintGraph)
+
+  function handleOnNodeListItemClick(id: string) {
+    props.onItemClick(id)
+  }
 
   if (!nodes) return <h1>No Nodes To Display</h1>
 
@@ -29,7 +37,7 @@ export function NodeList() {
       {nodes.map(({ id, name }) => (
         <NodeListItem
           key={id}
-          onClick={() => console.log('Clicked', id)}
+          onClick={() => handleOnNodeListItemClick(id)}
         >
           {name}
         </NodeListItem>
