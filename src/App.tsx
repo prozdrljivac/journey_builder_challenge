@@ -1,33 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useEffect, useState } from 'react'
+import { ActionBlueprintGraphApi } from './api'
+import type { ActionBlueprintGraphDTO } from './api/action-blueprint-graph/dto'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+// API Endpoint - localhost:3000/api/v1/123/actions/blueprints/bp_456/graph
+/* TODO - Hit action-blueprint-graph-get endpoint from a mock server and render a list of forms.
 
+- Define a ActionBlueprintDTO
+- Render a list of forms
+  - Create a context and reducer
+  - List and ListItem - with display name and onClick action
+*/
+
+function App() {
+  const [graph, setGraph] = useState<ActionBlueprintGraphDTO>()
+
+  useEffect(() => {
+    ActionBlueprintGraphApi.getById('bp_123')
+      .then((data) => {
+        console.log(data)
+        setGraph(data)
+      })
+      .catch(console.error)
+  }, [])
+
+  if (!graph) {
+    return <h1>No Graph Buddy</h1>
+  }
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {graph.nodes.map((node) => (
+        <p>{node.data.name}</p>
+      ))}
     </>
   )
 }
