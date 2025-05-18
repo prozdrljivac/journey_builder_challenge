@@ -1,2 +1,2 @@
-export * from './Generics/Sidebar'
+export * from './Generics/Sidebar/Sidebar'
 export * from './NodeList/NodeList'
