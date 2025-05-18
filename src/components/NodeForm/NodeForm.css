@@ -1,0 +1,24 @@
+.node-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;          /* vertical spacing between chips */
+}
+
+.sidebar-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.subline {
+  font-size: 0.75rem;
+  color: #6b7280;        /* gray-500 */
+  margin-bottom: 0.75rem;
+}
+
+.empty-msg {
+  font-size: 0.875rem;
+  color: #6b7280;
+  padding: 1rem;
+  text-align: center;
+}

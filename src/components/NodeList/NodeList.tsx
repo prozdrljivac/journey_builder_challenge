@@ -34,14 +34,16 @@ export function NodeList(props: NodeListProps) {
   return (
     <>
       <h1 className="title">Nodes</h1>
-      {nodes.map(({ id, name }) => (
-        <NodeListItem
-          key={id}
-          onClick={() => handleOnNodeListItemClick(id)}
-        >
-          {name}
-        </NodeListItem>
-      ))}
+      <ul>
+        {nodes.map(({ id, name }) => (
+          <NodeListItem
+            key={id}
+            onClick={() => handleOnNodeListItemClick(id)}
+          >
+            {name}
+          </NodeListItem>
+        ))}
+      </ul>
     </>
   )
 }

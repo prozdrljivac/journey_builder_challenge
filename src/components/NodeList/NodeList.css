@@ -1,15 +1,8 @@
-:root {
-  --indigo-500: #4f46e5;
-  --indigo-600: #4338ca;
-  --white: #ffffff;
-  --radius: 6px;
-}
-
 .list {
   list-style: none;
   margin: 0;
   padding: 0;
-  max-width: 400px;
+  max-width: 600px;
 }
 
 .list-item {

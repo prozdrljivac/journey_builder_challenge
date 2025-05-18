@@ -11,4 +11,36 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --radius: 6px;
+
+  /* Colors */
+  --indigo-500: #4f46e5;
+  --indigo-600: #4338ca;
+  --white: #ffffff;
+  --black: #000000;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1.title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--indigo-500);
 }

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { ActionBlueprintGraphApi } from './api'
-import { NodeList, Sidebar } from './components'
+import { NodeForm, NodeList, Sidebar } from './components'
 import { ActionBlueprintGraphContext } from './context/ActionBlueprintGraphContext'
 import type { ActionBlueprintGraph } from './types'
 
@@ -33,7 +33,7 @@ export default function App() {
           isOpen={!!selectedNode}
           onClose={handleSidebarClose}
         >
-          <h1>Prefill</h1>
+          <NodeForm selectedNodeId={selectedNode} />
         </Sidebar>
       </main>
     </ActionBlueprintGraphContext.Provider>
