@@ -37,10 +37,26 @@ This project is a solution to the **Journey Builder React Coding Challenge**. It
 
 ## Testing
 
-This project includes **unit tests**.
+This project includes **unit tests** and E2E tests.
+
+### Unite Tests
 
 To run the unit tests:
 
 ```sh
 npm test
 ```
+
+### End-to-End (E2E) Tests
+
+#### Setup
+
+1. Ensure both mock server and app are running
+
+2. Run the E2E suite
+
+```sh
+npm run test:e2e
+```
+
+Playwright will launch a browser, execute all `*.spec.ts` files under `tests/`, and report pass/fail status.

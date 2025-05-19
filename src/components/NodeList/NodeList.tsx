@@ -1,7 +1,7 @@
 import { useActionBlueprintGraphContext } from '../../context/ActionBlueprintGraphContext'
 import type { ActionBlueprintGraph } from '../../types'
 import './NodeList.css'
-import NodeListItem from './NodeListItem'
+import { NodeListItem } from './NodeListItem'
 
 type Node = {
   id: string
