@@ -1,7 +1,5 @@
 import { expect, test } from '@playwright/test'
 
-test.use({ baseURL: 'http://localhost:5173' })
-
 test.describe('Journey Builder App E2E', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/')
