@@ -1,4 +1,4 @@
-export interface ActionBlueprintGraphDTO {
+export type ActionBlueprintGraphDTO = {
   $schema: string
   id: string
   tenant_id: string
@@ -12,19 +12,19 @@ export interface ActionBlueprintGraphDTO {
   triggers: ActionBlueprintTriggerDTO[]
 }
 
-export interface PositionDTO {
+export type PositionDTO = {
   x: number
   y: number
 }
 
-export interface ActionBlueprintNodeDTO {
+export type ActionBlueprintNodeDTO = {
   id: string
   type: 'form'
   position: PositionDTO
   data: ActionBlueprintNodeDataDTO
 }
 
-export interface ActionBlueprintNodeDataDTO {
+export type ActionBlueprintNodeDataDTO = {
   id: string
   component_key: string
   component_type: string
@@ -41,12 +41,12 @@ export interface ActionBlueprintNodeDataDTO {
   approval_roles: string[]
 }
 
-export interface ActionBlueprintEdgeDTO {
+export type ActionBlueprintEdgeDTO = {
   source: string
   target: string
 }
 
-export interface JsonSchemaProperty {
+export type JsonSchemaProperty = {
   avantos_type: string
   title?: string
   type: string
@@ -56,36 +56,36 @@ export interface JsonSchemaProperty {
   uniqueItems?: boolean
 }
 
-export interface JsonSchemaDTO {
+export type JsonSchemaDTO = {
   type: 'object'
   properties: Record<string, JsonSchemaProperty>
   required?: string[]
 }
 
-export interface UiSchemaElementDTO {
+export type UiSchemaElementDTO = {
   type: string
   scope: string
   label?: string
   options?: Record<string, unknown>
 }
 
-export interface UiSchemaDTO {
+export type UiSchemaDTO = {
   type: string
   elements: UiSchemaElementDTO[]
 }
 
-export interface DynamicFieldPayloadEntry {
+export type DynamicFieldPayloadEntry = {
   type: 'form_field' | string
   value: string
 }
 
-export interface DynamicFieldConfigEntry {
+export type DynamicFieldConfigEntry = {
   selector_field: string
   payload_fields: Record<string, DynamicFieldPayloadEntry>
   endpoint_id: string
 }
 
-export interface ActionBlueprintFormDTO {
+export type ActionBlueprintFormDTO = {
   id: string
   name: string
   description: string

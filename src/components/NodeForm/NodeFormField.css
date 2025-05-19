@@ -1,0 +1,77 @@
+.chip {
+  width: 100%;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.placeholder {
+  border: 2px dashed var(--indigo-800);
+  color: var(--gray-500);
+  background: transparent;
+  cursor: pointer;
+}
+
+.placeholder:hover {
+  border-color: var(--indigo-700);
+}
+
+.mapped {
+  background: var(--gray-200);
+  color: var(--gray-900);
+}
+
+.chip-text {
+  flex: 1 1 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chip-remove {
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  cursor: pointer;
+  color: red;
+}
+
+.chip-remove:hover {
+  opacity: 1;
+}
+
+.dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: grid;
+  place-items: center;
+  z-index: 1000;
+}
+
+.dialog {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  width: 360px;
+}
+
+.dialog-list {
+  max-height: 240px;
+  overflow: auto;
+  margin: 1rem 0;
+}
+
+.dialog-list li {
+  padding: 0.35rem 0.25rem;
+  cursor: pointer;
+}
+
+.dialog-list li:hover {
+  background: var(--gray-100);
+}

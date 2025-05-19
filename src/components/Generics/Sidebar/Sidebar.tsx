@@ -1,21 +1,23 @@
 import { type ReactNode } from 'react'
 import './Sidebar.css'
 
-interface SidebarProps {
+type SidebarProps = {
   isOpen: boolean
   onClose: () => void
   children: ReactNode
 }
 
-export function Sidebar({ isOpen, onClose, children }: SidebarProps) {
+export function Sidebar(props: SidebarProps) {
   return (
     <>
       <div
-        className={`sidebar-backdrop ${isOpen ? 'open' : ''}`}
-        onClick={onClose}
+        className={`sidebar-backdrop ${props.isOpen ? 'open' : ''}`}
+        onClick={props.onClose}
       />
 
-      <aside className={`sidebar ${isOpen ? 'open' : ''}`}>{children}</aside>
+      <aside className={`sidebar ${props.isOpen ? 'open' : ''}`}>
+        {props.children}
+      </aside>
     </>
   )
 }

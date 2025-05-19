@@ -1,0 +1,73 @@
+.svd-panels {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 1rem;
+  max-height: 60vh;
+}
+
+.svd-title {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  color:var(--indigo-800)
+}
+
+.svd-sidebar {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  border-right: 1px solid var(--gray-200);
+  padding-right: 0.5rem;
+}
+
+.svd-group {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  padding: 0.4rem 0.25rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--indigo-800)
+}
+
+.svd-group.open,
+.svd-group:hover {
+  background: var(--gray-200)
+}
+
+.arrow {
+  font-size: 0.75rem;
+  width: 1rem;
+  display: inline-block;
+}
+
+.svd-proplist {
+  list-style: none;
+  margin: 0.25rem 0 0.5rem 1.25rem;
+  padding: 0;
+}
+
+.svd-prop {
+  padding: 0.25rem 0;
+  font-size: 0.8125rem;
+  cursor: pointer;
+  color: var(--indigo-800)
+}
+
+.svd-prop:hover {
+  background: var(--gray-200)
+}
+
+.svd-cancel {
+  margin-top: 1rem;
+  background: transparent;
+  border: none;
+  color: #2563eb;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  align-self: flex-end;
+}

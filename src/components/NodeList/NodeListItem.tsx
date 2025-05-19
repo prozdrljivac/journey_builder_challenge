@@ -1,18 +1,18 @@
 import { type MouseEventHandler, type ReactNode } from 'react'
 import './NodeList.css'
 
-export interface ListItemProps {
+type ListItemProps = {
   onClick?: MouseEventHandler<HTMLLIElement>
   children: ReactNode
 }
 
-export default function ListItem({ onClick, children }: ListItemProps) {
+export default function ListItem(props: ListItemProps) {
   return (
     <li
       className="list-item"
-      onClick={onClick}
+      onClick={props.onClick}
     >
-      {children}
+      {props.children}
     </li>
   )
 }
