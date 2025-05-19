@@ -17,6 +17,7 @@ export function Modal(props: ModalProps) {
 
   return createPortal(
     <div
+      data-testid="generic-modal"
       className="modal-backdrop"
       onClick={props.onClose}
     >
